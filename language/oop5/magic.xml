@@ -45,7 +45,9 @@
     <link linkend="object.clone">__clone()</link>,
     <emphasis>doivent</emphasis> être déclaré en tant que <literal>public</literal>,
     sinon une <constant>E_WARNING</constant> est émise.
-    Antérieur à PHP 8.0.0, aucun diagnostic n'était émis pour les méthodes magiques
+    
+    
+    ment à PHP 8.0.0, aucun diagnostic n'était émis pour les méthodes magiques
     <link linkend="object.sleep">__sleep()</link>,
     <link linkend="object.wakeup">__wakeup()</link>,
     <link linkend="object.serialize">__serialize()</link>,
@@ -56,9 +58,9 @@
  <warning>
   <para>
    Si des déclarations de types sont utilisé dans la définition d'une méthode
-   magique, elles doivent être identique à la signature décrit dans ce document.
+   magique, elles doivent être identiques à la signature décrite dans ce document.
    Sinon, une erreur fatale est émise.
-   Antérieur à PHP 8.0.0, aucun diagnostic n'était émis.
+   Antérieurement à PHP 8.0.0, aucun diagnostic n'était émis.
    Cependant, <link linkend="object.construct">__construct()</link> et
    <link linkend="object.destruct">__destruct()</link> ne doivent pas déclarer
    un type de retour ; sinon une erreur fatale est émise.
@@ -98,7 +100,7 @@
     </para>
    </note>
    <para>
-    Le but avoué de <link linkend="object.sleep">__sleep()</link> est de valider des données en attente
+    L'utilisation prévue de <link linkend="object.sleep">__sleep()</link> est de valider des données en attente
     ou d'effectuer des opérations de nettoyage.
     De plus, cette fonction est utile si un objet très large n'a pas besoin
     d'être sauvegardés dans sa totalité.
@@ -110,7 +112,7 @@
     peut reconstruire toute ressource que l'objet pourrait posséder.
    </para>
    <para>
-    Le but avoué de <link linkend="object.wakeup">__wakeup()</link> est de rétablir
+    L'utilisation prévue de <link linkend="object.wakeup">__wakeup()</link> est de rétablir
     toute connexion de base de données qui aurait été perdue
     durant la linéarisation et d'effectuer des tâches de réinitialisation.
    </para>
@@ -192,10 +194,10 @@ class Connection
     L'utilisation prévue de <link linkend="object.serialize">__serialize()</link>
     est de définir une représentation arbitraire de l'objet pour le linéariser
     facilement. Les éléments du tableau peuvent correspondre aux propriétés de
-    l'objet mais cei n'est pas requis.
+    l'objet mais ce n'est pas obligatoire.
    </para>
    <para>
-    inversement, <function>unserialize</function> vérifie la présence d'une
+    Inversement, <function>unserialize</function> vérifie la présence d'une
     fonction avec le nom magique
     <link linkend="object.unserialize">__unserialize()</link>.
     Si présent, cette fonction sera passé le tableau restauré qui a été retournée
@@ -277,7 +279,7 @@ class Connection
    <warning>
     <para>
      À partir de PHP 8.0.0, la valeur de retour suit les sémantiques standard
-     de PHP, signifiant que la valeur sera convertie en une <type>string</type>
+     de PHP, et la valeur sera donc convertie en une <type>string</type>
      si possible et si le
      <link linkend="language.types.declarations.strict">typage stricte</link>
      est désactivé.
@@ -294,7 +296,7 @@ class Connection
      <type>string</type>, sinon une <classname>Error</classname> est lancé.
     </para>
     <para>
-     Antérieur à PHP 7.4.0, la valeur de retour <emphasis>doit</emphasis>
+     Antérieurement à PHP 7.4.0, la valeur de retour <emphasis>doit</emphasis>
      être une <type>string</type>, sinon une <constant>E_RECOVERABLE_ERROR</constant>
      fatale est émise.
     </para>
@@ -302,7 +304,7 @@ class Connection
    <warning>
     <simpara>
      Il était impossible de lancer une exception depuis la méthode
-     <link linkend="object.tostring">__toString()</link> antérieur à PHP 7.4.0.
+     <link linkend="object.tostring">__toString()</link> antérieurement à PHP 7.4.0.
      Cela entraînera une erreur fatale.
     </simpara>
    </warning>
